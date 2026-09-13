@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  code, pre {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090D16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism & Glow helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(16, 185, 129, 0.2), rgba(236, 72, 153, 0.1));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* High-Contrast Light Theme Overrides */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Base background containers in Light Mode */
+html.light [class*="bg-[#090D16]"],
+html.light [class*="bg-[#060912]"],
+html.light [class*="bg-[#070B14]"],
+html.light [class*="bg-[#0B0F19]"] {
+  background-color: #f8fafc !important;
+}
+
+/* Cards & Panel containers */
+html.light .glass-panel,
+html.light [class*="bg-slate-900"],
+html.light [class*="bg-slate-950"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .glass-panel-hover:hover {
+  background-color: #ffffff !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Secondary dark panels (e.g., buttons, tabs, secondary boxes) */
+html.light [class*="bg-slate-800"] {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* High Contrast Typography */
+html.light .text-white,
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-300 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-400 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Border color overrides */
+html.light [class*="border-slate-800"],
+html.light [class*="border-slate-700"] {
+  border-color: #cbd5e1 !important;
+}
+
+/* Inputs, Selects & Textareas */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Header & Footer */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: #cbd5e1 !important;
+}
+
+/* Gradient Heading text in light mode for max contrast */
+html.light .bg-clip-text {
+  background-image: linear-gradient(to right, #0f172a, #334155) !important;
+}
+
