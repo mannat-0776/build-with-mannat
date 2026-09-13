@@ -3,7 +3,7 @@
 > A modern, full-stack interactive hub for AI engineering, prompt design, live Reddit AI scraping, trending open-source GitHub repositories, and Python developer workflows.
 
 ![Build with Mannat Landing Page Screenshot](./src/assets/images/landing_page_preview_1789316429155.jpg)
-
+https://vercel.com/mannat-0776s-projects/build-with-mannat/5uaB7MPifxG3Mb86Ym6pq9ErkJQx
 ---
 
 ## ✨ Features
